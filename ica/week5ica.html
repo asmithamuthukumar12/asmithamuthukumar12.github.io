@@ -27,8 +27,14 @@
         }
 
         .card-content {
-            display:none;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 2rem;
+            border: 1rem black;
         }
+
     </style>
 </head>
 
@@ -46,4 +52,29 @@
     </div>
   </div>
 </div>
+    <script>
+        let info=false;
+        const expandBtn = document.querySelector('.expand-btn');
+        const details = document.querySelector('.card-content');
+
+        expandBtn.addEventListener('click', showInfo);
+
+
+        function showInfo() {
+            console.log("hi");
+            alert("this is an alert");
+            if(info == false) {
+                details.style.display = "block";
+                info=true;
+            }
+
+            else {
+                details.style.display = "none";
+                info=false;
+            }
+        }
+    </script>
 </body>
+
+
+</html>
