@@ -1,10 +1,19 @@
+
+
+
+
+
+
 h1 {
  
   font-family: "Kavivanar", cursive;
   font-weight: 600;
   font-style: normal;
-
-
+  font-size: 48px;
+  position: relative;
+  color:#872F38;
+  top:10px;
+  left:20px;
 }
 
 h2 {
@@ -12,4 +21,70 @@ h2 {
   font-weight: 600;
   font-style: normal;
   font-size: 36px;
+  position: relative;
+  left:20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+h3 {
+  font-size: 24px;
+  color:#872F38;
+}
+
+nav {
+  background-color:#397367;
+  padding:15px;
+  font-family: "Bentham", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background-color: #397367;
+  text-align: center;
+  padding: 10px;
+  left:20px;
+}
+
+a:visited {
+  background-color: #668BA4;
+  color: black;
+}
+
+a:hover {
+  background-color: #E7B730;
+  color:black;
+}
+
+p {
+  
+    font-family: "Bentham", serif;
+    font-weight: 400;
+    font-style: normal;
+  
+  
+  font-size: 22px;
+  padding-left: 20px;
+}
+
+img {
+  height: 30%;
+  width: 30%;
+  float:left;
+}
+
+li{
+  font-family: "Bentham", serif;
+    font-weight: 400;
+    font-style: normal;
+  padding-left:20px;
+  font-size: 22px;
 }
