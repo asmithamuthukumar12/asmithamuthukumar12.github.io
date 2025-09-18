@@ -25,6 +25,7 @@
 }
 
 
+
 .hamburger {
     background-color: black;
     height:6px;
@@ -35,8 +36,22 @@
     
 }
 
+.nav-menu.show {
+    position:absolute;
+    top:90px;
+    right:0px;
+    height:200px;
+    width:150px;
+    flex-direction:column;
+    justify-content:center;
+    align-content:center;
+    background-color: thistle;
+    padding:5px;
+}
+
 @media screen and (max-width:768px) { 
     .nav-toggle {
         display:flex;
     }
 }
+
