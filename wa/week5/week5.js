@@ -8,7 +8,7 @@ function showMenu(){
     navMenu.classList.toggle("hide");
 
     if (shown) {
-        navToggle.setAttribute("aria-expanded", "true")
+        navToggle.setAttribute("aria-expanded", "true");
     }
 
     else {
