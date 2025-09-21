@@ -10,14 +10,16 @@
     padding:20px;
 }
 
+
+
 a {
   display: inline-block;
   text-decoration: none;
   color: white;
   background-color: #1d164d;
   text-align: center;
-  padding: 1px;
-  width:140px;
+  padding: 4px;
+  width:150px;
   height:40px;
 }
 
@@ -43,7 +45,7 @@ a:hover {
 }
 
 .nav-brand {
-    font-size: 30px;
+    font-size: 35px;
     font-style: italic;
 
     font-family: "Limelight", sans-serif;
@@ -84,7 +86,6 @@ a:hover {
     }
 }
 
-
 .nav-menu.show {
     display:flex;
     position:absolute;
@@ -99,5 +100,28 @@ a:hover {
     color: white;
     padding:5px;
     border-radius:10px;
+    z-index: 99;
+} 
+
+h1 { 
+    font-size:24px;
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#11306a;
+
+    position: relative;
+    left:10px;
+
 }
 
+
+
+p {
+  font-family: "Slabo 13px", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  position: relative;
+  left: 20px;
+}
