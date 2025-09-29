@@ -1,13 +1,47 @@
+.about-container {
+  grid-template-areas:
+  "header main-nav"
+  "photobox"
+  "main-text"
+}
+
+.involved-container {
+  grid-template-areas: 
+  "source1 source2 source3"
+  "source4 source5 source6"
+}
 
 
-
-.wrapper {
+.aboutwrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 100px;
 }
 
-.box1 {
+.involvedwrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.involvedwrapper a {
+  display: block;
+  width: 300px;
+  height:225px;
+  overflow: hidden;
+}
+
+.involvedwrapper a img {
+  flex: 1 1 300px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.header {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
@@ -15,7 +49,7 @@
   background-color: rgb(73, 12, 12);
 }
 
-.box2 {
+.photobox {
 
   background-color:rgb(255, 255, 255);
   grid-column-start: 1;
@@ -26,26 +60,37 @@
   
 
 }
-.headerimg {
+img {
     
     max-width:100%;
     max-height:150%;
     width:auto;
+    display: flex;
+    margin: auto;
+
     }
 
-.box3 {
+.main-text {
   grid-column-start: 1;
   grid-column-end:4;
   grid-row-start: 5;
   grid-row-end: 6;
 }
 
-.box4 {
+.representbox {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start:7;
-  grid-row-end: 10;
+  grid-row-end: 11;
   background-color: beige;
+}
+
+.aboutinfobox {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start:7;
+  grid-row-end: 10;
+  background-color: none;
 }
 
 .main-nav {
@@ -57,8 +102,18 @@
     padding:20px;
 }
 
+button {
+  color: #235c45;
+  padding-bottom: 10px;
+}
 
-a {
+ul {
+  font-size: 18px;
+  
+}
+
+
+ a {
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -130,12 +185,7 @@ a:hover {
         right:10px;
     }
 
-    .box3 {
-      grid-column-start: 1;
-      grid-column-end:4;
-      grid-row-start: 4;
-      grid-row-end: 6;
-}
+    
 
     .hamburger {
         background-color: rgba(247, 229, 126, 0.894);
