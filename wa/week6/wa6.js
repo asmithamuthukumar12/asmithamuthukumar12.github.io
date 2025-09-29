@@ -40,3 +40,16 @@ function filterPhotos(category) {
     }
   });
 }
+
+const form = document.getElementById('signupForm');
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+
+form.addEventListener('submit', function(e) {
+  if (!emailInput.checkValidity()) {
+    e.preventDefault(); // prevent form submission
+    emailError.textContent = 'Please enter a valid email address.';
+  } else {
+    emailError.textContent = '';
+  }
+});
