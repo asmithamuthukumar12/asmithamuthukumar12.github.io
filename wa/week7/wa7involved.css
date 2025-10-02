@@ -5,10 +5,9 @@
 }
 
 
-
 .involvedwrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 50px;
   justify-content: center;
   margin: 0 auto;
@@ -28,3 +27,29 @@
   object-fit: cover;
   display: block;
 }
+
+
+
+@media screen and (max-width:768px) { 
+    
+    .involvedwrapper {
+        display:grid;
+        grid-template-columns:repeat(2, 1fr)
+    }
+   
+
+
+}   
+
+
+@media screen and (max-width:500px) { 
+    
+    .involvedwrapper {
+        display:grid;
+        grid-template-columns:repeat(1, 1fr);
+        
+    }
+   
+
+
+}   

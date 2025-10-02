@@ -8,17 +8,21 @@
   "main-text"
 }
 
-.involved-container {
-  grid-template-areas: 
-  "source1 source2 source3"
-  "source4 source5 source6"
-}
-
 
 .aboutwrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 100px;
+}
+
+
+
+
+/*
+.involved-container {
+  grid-template-areas: 
+  "source1 source2 source3"
+  "source4 source5 source6"
 }
 
 .involvedwrapper {
@@ -43,6 +47,9 @@
   object-fit: cover;
   display: block;
 }
+
+*/
+
 
 .header {
   grid-column-start: 1;
@@ -124,7 +131,7 @@ img {
   color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+ 
 }
 
 .contact-form button:hover {
