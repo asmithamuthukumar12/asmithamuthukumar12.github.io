@@ -1,4 +1,3 @@
-
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -55,12 +54,14 @@ form.addEventListener('submit', function(e) {
   }
 });
 
+// ---------------- Language Preference ----------------
 function setLanguage(lang) {
   localStorage.setItem('userLanguage', lang);
   console.log('Language set to:', lang);
   alert('Language set to:' + lang)
+  // TODO: update visible content for this language if needed
 }
 
 const userLang = localStorage.getItem('userLanguage') || 'en';
 console.log('Loaded language:', userLang);
-alert('Language set to:' + userLang)
+alert('Language set to:' + userLang)
