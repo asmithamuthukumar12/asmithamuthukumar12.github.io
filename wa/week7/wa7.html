@@ -1,67 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="wa7.css">
-    <script src="wa7.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About SASA</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Limelight&family=Slabo+13px&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wa7.css">
+  <script src="wa7.js" defer></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Limelight&family=Slabo+13px&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div class="about-container">
 
+    <!-- Header + Navigation -->
+    <header class="header">
+      <nav class="main-nav">
+        <div class="nav-brand">CU SASA!</div>
 
-<div class="aboutwrapper">
-  <div class="header">
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
 
-    <nav class="main-nav">
-    <div class="nav-brand"> CU SASA! </div>
-     <button class="nav-toggle" aria-label="Toggle navigation menu">
-         <span class="hamburger"></span>
-         <span class="hamburger"></span>
-         <span class="hamburger"></span>
-      </button>
+        <div class="nav-menu">
+          <a href="wa7.html">About SASA</a>
+          <a href="wa7involved.html">Get Involved!</a>
+          <a href="wa7events.html">Our Events</a>
+          <a href="wa7content.html">Contact Us!</a>
+        </div>
+      </nav>
+    </header>
 
-  <div class="nav-menu">
-    <div class="menustuff">
-    <a href="wa7.html">About SASA</a>
-    <a href="wa7involved.html">Get Involved!</a>
-    <a href="wa7events.html">Our Events</a>
-    <a href="wa7content.html">Contact Us!</a>
-</div>
+    <!-- Photo Section -->
+    <div class="photobox">
+      <img src="https://asmithamuthukumar12.github.io/wa/week6/Screenshot%202025-09-25%20123345.jpg" alt="People at SASA event">
+    </div>
 
-  </div>
-</nav>
+    <!-- Main Text -->
+    <section class="main-text">
+      <h1>About SASA!</h1>
+      <p>Welcome to the CU SASA Homepage!</p>
+      <p>
+        SASA is a multicultural club that focuses on teaching both South Asians
+        and non-South Asians about South Asian cultures and traditions, while also
+        giving people a space to be themselves and hang out with their friends!
+      </p>
+    </section>
 
-
-  </div>
-    
-
-
-
-  <div class="photobox">
-
-    
-<img src="https://asmithamuthukumar12.github.io/wa/week6/Screenshot%202025-09-25%20123345.jpg" alt="photo of people">
-
-  </div>
-
-  <div class="main-text">
-    <h1> About SASA! </h1>
-<p> Welcome to the CU SASA Homepage!</p>
-<p> SASA is a multicultural club that focuses on teaching both South Asians and non-South Asians about South Asian cultures and traditions, while also giving people a space to be themselves and hang out with their friends!</p>
-
-  </div>
-
-  <div class="representbox">
-      <h1> Who We Represent!</h1>
+    <!-- Representation Box -->
+    <section class="representbox">
+      <h1>Who We Represent!</h1>
+      <ul>
         <li>India</li>
         <li>Maldives</li>
         <li>Pakistan</li>
@@ -70,31 +64,29 @@
         <li>Nepal</li>
         <li>Sri Lanka</li>
         <li>Afghanistan</li>
-        
-    
+      </ul>
+    </section>
+
+    <!-- Info + Form -->
+    <section class="aboutinfobox">
+      <h1>What We Do!</h1>
+      <p>SASA has meetings every week!</p>
+      <p>Sign up for our newsletter!</p>
+
+      <div class="contact-form">
+        <form id="signupForm" novalidate>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <span id="emailError" class="error-message"></span>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
   </div>
-
-  <div class="aboutinfobox">
-    <h1> What we do! </h1> 
-    <p> SASA has meetings every week! </p>
-    <p> Sign up for our newsletter!</p>
-
-
-    <div class="contact-form">
-   <form id="signupForm" novalidate>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <span id="emailError" class="error-message"></span>
-
-    <button type="submit">Submit</button>
-  </form>
-</div>
-  </div>
-</div>
-
 </body>
 </html>
