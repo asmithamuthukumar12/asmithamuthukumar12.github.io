@@ -1,3 +1,4 @@
+
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -54,27 +55,12 @@ form.addEventListener('submit', function(e) {
   }
 });
 
-let drkbtn = document.querySelector('#theme').addEventListener('click', theme)
-
-function theme(){
-    console.log("theme works");
+function setLanguage(lang) {
+  localStorage.setItem('userLanguage', lang);
+  console.log('Language set to:', lang);
+  alert('Language set to:' + lang)
 }
 
-// Save user's theme choice
-function setTheme(theme) {
-    if (theme == 'dark') {
-        theme = 'light';
-    }
-
-    else {
-        theme = 'dark';
-    }
-    localStorage.setItem('userTheme', theme);
-    document.body.className = theme;
-}
-
-// Load saved theme on page load
-window.addEventListener('load', function() {
-    const savedTheme = localStorage.getItem('userTheme') || 'light';
-    document.body.className = savedTheme;
-});
+const userLang = localStorage.getItem('userLanguage') || 'en';
+console.log('Loaded language:', userLang);
+alert('Language set to:' + userLang)
