@@ -1,6 +1,4 @@
-/* ------------------------
-   INVOLVED PAGE GRID
-------------------------- */
+
 
 .involved-container {
   display: grid;
@@ -18,7 +16,6 @@
   align-items: center;
 }
 
-/* Each photo link card */
 .involvedwrapper a {
   display: block;
   width: 300px;
@@ -33,9 +30,7 @@
   display: block;
 }
 
-/* ------------------------
-   GALLERY HEADER & NAV
-------------------------- */
+
 .gallery-container {
   text-align: center;
   padding: 20px;
@@ -43,7 +38,7 @@
 
 .gallery-container h1 {
   font-family: "Limelight", sans-serif;
-  color: #11306a;
+  color: #3d60a0;
   margin-bottom: 15px;
 }
 
@@ -59,16 +54,13 @@
   padding: 8px 15px;
   margin: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .gallery-nav button:hover {
   background-color: #1a4d9b;
 }
 
-/* ------------------------
-   RESPONSIVE STYLES
-------------------------- */
+
 
 @media screen and (max-width: 1024px) {
   .involvedwrapper {
