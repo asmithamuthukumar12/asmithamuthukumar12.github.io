@@ -30,7 +30,6 @@ filterButtons.forEach(button => {
   });
 });
 
-
 function filterPhotos(category) {
   photoCards.forEach(card => {
     if (category === 'all' || card.dataset.category === category) {
@@ -41,27 +40,77 @@ function filterPhotos(category) {
   });
 }
 
-const form = document.getElementById('signupForm');
-const emailInput = document.getElementById('email');
-const emailError = document.getElementById('emailError');
+// localStorage functions
+function setLocalStorage(key,value,time) {
+    if (key && value) {
+        //localStorage.setItem(key, value);
+        const now = new Date();
 
-form.addEventListener('submit', function(e) {
-  if (!emailInput.checkValidity()) {
-    e.preventDefault(); // prevent form submission
-    emailError.textContent = 'Please enter a valid email address.';
-  } else {
-    emailError.textContent = '';
-  }
-});
+        const item = {
+          value: value,
+          expiry: now.getTime() + time, // milliseconds from now
+        };
 
-// ---------------- Language Preference ----------------
-function setLanguage(lang) {
-  localStorage.setItem('userLanguage', lang);
-  console.log('Language set to:', lang);
-  alert('Language set to:' + lang)
-  // TODO: update visible content for this language if needed
+        localStorage.setItem(key, JSON.stringify(item));
+
+        alert(`Saved to localStorage!\nKey: "${key}"\nValue: "${value}"\n\nExpiration: "${time}!`);
+        viewLocalStorage();
+    }
 }
 
-const userLang = localStorage.getItem('userLanguage') || 'en';
-console.log('Loaded language:', userLang);
-alert('Language set to:' + userLang)
+function getItemWithExpiry(key) {
+  const itemStr = localStorage.getItem(key);
+  if (!itemStr) return null;
+
+  const item = JSON.parse(itemStr);
+  const now = new Date();
+
+  // Compare the expiry time with the current time
+  if (now.getTime() > item.expiry) {
+    localStorage.removeItem(key);
+    return null; // expired
+  }
+
+  return item.value;
+}
+
+
+function viewLocalStorage() {
+    const output = document.getElementById('ls-output');
+    let html = '';
+    
+    if (localStorage.length === 0) {
+        html = '<span class="empty">localStorage is empty</span>';
+    } else {
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            html += `<div><span class="key">${key}</span>: <span class="value">${value}</span></div>`;
+        }
+    }
+    output.innerHTML = html;
+}
+
+
+// Save user's theme choice
+function setTheme(theme) {
+    localStorage.setItem('userTheme', theme);
+    document.body.className = theme;
+
+    setLocalStorage('userTheme',theme,24 * 60 * 60 * 1000)
+}
+
+function clearLocalStorage() {
+    if (confirm('Clear all localStorage data (including theme)?')) {
+        localStorage.clear();
+        viewLocalStorage();
+        alert('localStorage cleared!');
+    }
+}
+
+// Load saved theme on page load
+window.addEventListener('load', function() {
+    const savedTheme= getItemWithExpiry('userTheme');
+    //const savedTheme = localStorage.getItem('userTheme') || 'light';
+    document.body.className = savedTheme;
+});
