@@ -1,56 +1,88 @@
-.involved-container {
-  grid-template-areas: 
-  "source1 source2 source3"
-  "source4 source5 source6"
-}
+/* ------------------------
+   INVOLVED PAGE GRID
+------------------------- */
 
+.involved-container {
+  display: grid;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
 
 .involvedwrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
-  align-content: center;
-  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
 }
 
+/* Each photo link card */
 .involvedwrapper a {
   display: block;
   width: 300px;
-  height:225px;
-  overflow: hidden;
-  align-content: center;
+  height:225px;    
+  overflow: hidden;  
 }
 
 .involvedwrapper a img {
-  flex: 1 1 300px;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
+/* ------------------------
+   GALLERY HEADER & NAV
+------------------------- */
+.gallery-container {
+  text-align: center;
+  padding: 20px;
+}
 
+.gallery-container h1 {
+  font-family: "Limelight", sans-serif;
+  color: #11306a;
+  margin-bottom: 15px;
+}
 
-@media screen and (max-width:768px) { 
-    
-    .involvedwrapper {
-        display:grid;
-        grid-template-columns:repeat(2, 1fr)
-    }
-   
+.gallery-nav {
+  margin-bottom: 25px;
+}
 
+.gallery-nav button {
+  background-color: #11306a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-}   
+.gallery-nav button:hover {
+  background-color: #1a4d9b;
+}
 
+/* ------------------------
+   RESPONSIVE STYLES
+------------------------- */
 
-@media screen and (max-width:675px) { 
-    
-    .involvedwrapper {
-        display:grid;
-        grid-template-columns:repeat(1, 1fr);
-        
-    }
-   
+@media screen and (max-width: 1024px) {
+  .involvedwrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media screen and (max-width: 600px) {
+  .involvedwrapper {
+    grid-template-columns: 1fr;
+  }
 
-}   
+  .gallery-nav button {
+    width: 80%;
+    font-size: 14px;
+  }
+}
