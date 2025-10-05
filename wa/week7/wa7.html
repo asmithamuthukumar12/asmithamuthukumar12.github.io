@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Limelight&family=Slabo+13px&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="light">
   <div class="about-container">
 
     <!-- Header + Navigation -->
@@ -87,6 +87,13 @@
       </div>
     </section>
 
+    <div class="theme-buttons">
+      <button onclick="setTheme('dark')">Dark</button>
+      <button onclick="setTheme('light')">Light</button>
+      <button onclick="clearLocalStorage()">Clear Preference</button>
+    </div>
+
   </div>
 </body>
+
 </html>
