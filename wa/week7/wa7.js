@@ -53,7 +53,7 @@ function setLocalStorage(key,value,time) {
 
         localStorage.setItem(key, JSON.stringify(item));
 
-        alert(`Saved to localStorage!\nKey: "${key}"\nValue: "${value}"\n\nExpiration: "${time}!`);
+        alert(`Saved to localStorage!\nKey: "${key}"\nValue: "${value}"\n\nExpiration: "${time} milliseconds!`);
         viewLocalStorage();
     }
 }

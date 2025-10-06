@@ -234,6 +234,17 @@ p {
   left: 20px;
 }
 
+.theme-buttons {
+  grid-column: 1 / -1; 
+  grid-row: -2;      
+  margin-top: auto;    
+}
+
+footer {
+  font-size:12px;
+}
+
+
 
 
 @media screen and (max-width: 1024px) {
@@ -284,6 +295,8 @@ p {
     font-size: 14px;
     left: 0;
   }
+
+
 }
 
 @media screen and (max-width: 480px) {
