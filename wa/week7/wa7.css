@@ -219,7 +219,7 @@ a:hover {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 36px;
   font-family: "Limelight", sans-serif;
   font-weight: 400;
   color: #32569a;
@@ -257,9 +257,7 @@ footer {
     flex-wrap: wrap;
   }
 
-  h1 {
-    font-size: 20px;
-  }
+ 
 }
 
 @media screen and (max-width: 768px) {
@@ -287,14 +285,8 @@ footer {
     align-content: center;
   }
 
-  h1 {
-    font-size: 18px;
-  }
-
-  p {
-    font-size: 14px;
-    left: 0;
-  }
+  
+ 
 
 
 }
