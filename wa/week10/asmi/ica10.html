@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="ica11.css" />
+  <script src="ica11.js" defer></script>
+  <title>Name Predictor</title>
+</head>
+<body>
+  <div class="app">
+    <header>Name Predictor</header>
+
+    <section class="quotes">
+      <div class="quote-text">
+        Enter a name to predict their age, gender, and nationality!
+      </div>
+
+      <form id="js-form">
+        <input
+          type="text"
+          id="js-name-input"
+          placeholder="Type a name here..."
+          class="name-input"
+          autocomplete="off"
+        />
+        <button type="submit" id="js-predict" class="new-quote button">
+          Predict Info
+        </button>
+      </form>
+
+      <!-- Loading area -->
+      <div id="js-loading" class="loading hidden" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <div id="js-loading-text" class="loading-text">Fetching data…</div>
+      </div>
+
+      <!-- Results -->
+      <div id="js-results" class="quote-text results-box"></div>
+    </section>
+
+    <section class="controls">
+      <button id="js-clear" class="twitter button">Clear</button>
+    </section>
+  </div>
+</body>
+</html>
