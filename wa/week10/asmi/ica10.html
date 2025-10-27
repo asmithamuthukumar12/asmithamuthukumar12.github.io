@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="ica11.css" />
-  <script src="ica11.js" defer></script>
+  <link rel="stylesheet" href="ica10.css" />
+  <script src="ica10.js" defer></script>
   <title>Name Predictor</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bentham&family=Gwendolyn:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="app">
@@ -13,7 +17,7 @@
 
     <section class="quotes">
       <div class="quote-text">
-        Enter a name to predict their age, gender, and nationality!
+        Enter a name to predict their age and gender!
       </div>
 
       <form id="js-form">
@@ -29,19 +33,22 @@
         </button>
       </form>
 
-      <!-- Loading area -->
       <div id="js-loading" class="loading hidden" aria-live="polite">
         <div class="spinner" aria-hidden="true"></div>
         <div id="js-loading-text" class="loading-text">Fetching data…</div>
       </div>
 
-      <!-- Results -->
       <div id="js-results" class="quote-text results-box"></div>
     </section>
+    
 
     <section class="controls">
       <button id="js-clear" class="twitter button">Clear</button>
     </section>
+    <p> I implemented an API that predicts the age and gender of the name based off a database. I added a small loading icon when the information is predicting for a nice visual enhancement.</p>
+  <p> I think that it could be interesting to find a news API that I could implement into my critique project. It would provide a good source of steady trustable information. If this does not work well with Tiktok, I can also implement information from the Youtube API. I'm looking for data more catered towards information, so it could be interesting to have an access to the header of articles under videos using the API?  </p>
   </div>
+
+  
 </body>
 </html>

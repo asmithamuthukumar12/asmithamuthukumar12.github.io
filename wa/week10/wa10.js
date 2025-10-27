@@ -4,7 +4,7 @@ let answerBtn = document.querySelector('#js-tweet').addEventListener('click',sho
 
 let current = {
     title:"",
-    description:"",
+    short_description:"",
     genre:"",
     url:"",
 };
@@ -25,7 +25,7 @@ async function newGame() {
         let randomGame = games[Math.floor(randomNumber)];
 
         current.title = randomGame.title;
-        current.description= randomGame.short_description;
+        current.short_description= randomGame.short_description;
         current.genre = randomGame.genre;
         current.url = randomGame.game_url;
 
@@ -52,6 +52,7 @@ function displayGame(game){
 function showInfo() {
     console.log("Showing game info...");
     const gameInfo = document.querySelector('#js-answer-text');
+    
 }
 
 
