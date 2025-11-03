@@ -1,0 +1,161 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Bentham", serif;
+  background-color: #e9c3b8;
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 30px;
+}
+
+header {
+  width: 100%;
+  font-size: 60px;
+  font-family: "Gwendolyn", cursive;
+  font-weight: 700;
+  text-align: center;
+  padding: 50px;
+  border-bottom: 1px solid #ebebeb;
+  background-color: #c63862;
+  color: rgb(253, 213, 213);
+  border-radius: 5px 5px 0 0;
+}
+
+.quotes {
+  padding: 40px 50px;
+  min-height: 250px;
+}
+
+.quote-text {
+  padding-bottom: 30px;
+  font-size: 22px;
+  color: black;
+  text-align: center;
+}
+
+.name-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.results-box {
+  background-color: #d9e7fa;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: left;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.results-box a {
+  color: #a93232;
+  text-decoration: none;
+}
+
+.results-box a:hover {
+  text-decoration: underline;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  background: #e8c2c2;
+  border: 1px solid #f1b3d5;
+  border-radius: 6px;
+}
+
+.loading-text {
+  font-size: 16px;
+  color: #3c082f;
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid #e6a6cc;
+  border-top-color: #c4536f;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.controls {
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.button {
+  display: block;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.twitter {
+  background-color: #4f7892;
+}
+
+.twitter:hover {
+  background-color: #81b0cd;
+}
+
+.new-quote {
+  background-color: #a93232;
+  margin-bottom: 15px;
+}
+
+.new-quote:hover {
+  background-color: #e37d8c;
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    width: 95%;
+  }
+  .quote-text {
+    font-size: 18px;
+  }
+}

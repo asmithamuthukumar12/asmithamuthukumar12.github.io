@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="wa11.css">
+  <script src="wa11.js" defer></script>
+  <title>News Fetcher</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bentham&family=Gwendolyn:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header>News Fetcher</header>
+
+    <div class="quotes">
+      <div class="quote-text">
+        Choose a topic to see the latest news headlines!
+      </div>
+
+      <form id="js-form">
+        <select id="js-topic" class="name-input">
+          <option value="technology">Technology</option>
+          <option value="sports">Sports</option>
+          <option value="business">Business</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="health">Health</option>
+          <option value="science">Science</option>
+        </select>
+
+        <button type="submit" id="js-fetch" class="new-quote button">
+          Get News
+        </button>
+      </form>
+
+      <div id="js-loading" class="loading hidden" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <div id="js-loading-text" class="loading-text">Loading news…</div>
+      </div>
+
+      <div id="js-results" class="quote-text results-box"></div>
+    </div>
+    
+    <div class="controls">
+      <button id="js-clear" class="twitter button">Clear & Reset</button>
+    </div>
+  </div>
+</body>
+</html>
