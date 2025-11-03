@@ -2,15 +2,28 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
+
+*:before {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+*:after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 
 body {
   font-family: "Bentham", serif;
-  background-color: #e9c3b8;
+  background-color: #bcccce;
 }
 
 .app {
@@ -32,8 +45,8 @@ header {
   text-align: center;
   padding: 50px;
   border-bottom: 1px solid #ebebeb;
-  background-color: #c63862;
-  color: rgb(253, 213, 213);
+  background-color: #097770;
+  color: rgb(213, 253, 253);
   border-radius: 5px 5px 0 0;
 }
 
@@ -86,8 +99,8 @@ header {
   gap: 12px;
   padding: 12px;
   margin-top: 10px;
-  background: #e8c2c2;
-  border: 1px solid #f1b3d5;
+  background: #c2e5e8;
+  border: 1px solid #b3d3f1;
   border-radius: 6px;
 }
 
@@ -143,12 +156,12 @@ header {
 }
 
 .new-quote {
-  background-color: #a93232;
+  background-color: #384f38;
   margin-bottom: 15px;
 }
 
 .new-quote:hover {
-  background-color: #e37d8c;
+  background-color: #214934;
 }
 
 @media screen and (max-width: 600px) {

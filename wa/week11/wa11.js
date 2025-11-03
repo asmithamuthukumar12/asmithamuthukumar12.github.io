@@ -1,5 +1,5 @@
 const form = document.querySelector("#js-form");
-const topicSelect = document.querySelector("#js-topic");
+const categorySelect = document.querySelector("#js-category");
 const resultsDiv = document.querySelector("#js-results");
 const clearBtn = document.querySelector("#js-clear");
 const loadingBox = document.querySelector("#js-loading");
@@ -7,10 +7,10 @@ const loadingText = document.querySelector("#js-loading-text");
 
 const apiKey = "97ac3038-c750-44a1-ae21-3a350ce731d1";
 
-// load saved topic if available
-const savedTopic = localStorage.getItem("savedTopic");
-if (savedTopic) {
-  topicSelect.value = savedTopic;
+// load saved category
+let savedCategory = localStorage.getItem("savedCategory");
+if (savedCategory) {
+  categorySelect.value = savedCategory;
 }
 
 form.addEventListener("submit", function (event) {
@@ -19,49 +19,66 @@ form.addEventListener("submit", function (event) {
 });
 
 clearBtn.addEventListener("click", function () {
-  localStorage.removeItem("savedTopic");
+  localStorage.removeItem("savedCategory");
   resultsDiv.textContent = "";
-  topicSelect.value = "technology";
+  categorySelect.value = "dmoz/Society/Issues/Warfare_and_Conflict";
 });
 
-async function getNews() {
-  const topic = topicSelect.value;
-  localStorage.setItem("savedTopic", topic);
+function getNews() {
+  let categoryUri = categorySelect.value;
+  localStorage.setItem("savedCategory", categoryUri);
 
-  loadingText.textContent = `Fetching ${topic} news…`;
+  loadingText.textContent = "Fetching articles...";
   loadingBox.classList.remove("hidden");
   resultsDiv.textContent = "";
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  let url = "https://eventregistry.org/api/v1/article/getArticles?apiKey=" + apiKey + "&categoryUri=" + categoryUri + "&resultType=articles&articlesSortBy=date&articlesCount=5";
 
-  try {
-    const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?category=${topic}&language=en&apiKey=${apiKey}`
-    );
+  console.log("Fetching from:", url);
 
-    resultsDiv.innerHTML = `<p><strong>Status Code:</strong> ${response.status}</p>`;
+  fetch(url)
+    .then(function (response) {
+      console.log("Status code:", response.status);
 
-    const data = await response.json();
+      // only show status if not 200
+      if (response.status !== 200) {
+        resultsDiv.innerHTML = "<p><strong>Status Code:</strong> " + response.status + "</p>";
+      }
 
-    if (!data.articles || data.articles.length === 0) {
-      resultsDiv.innerHTML += "<p>No news found for this topic.</p>";
-    } else {
-      const articlesHTML = data.articles
-        .slice(0, 5)
-        .map(
-          (a) => `
-          <p><strong>${a.title}</strong></p>
-          <p>${a.description ? a.description : "No description available."}</p>
-          <p><a href="${a.url}" target="_blank">Read more</a></p>
-          <hr>
-        `
-        )
-        .join("");
-      resultsDiv.innerHTML += articlesHTML;
-    }
-  } catch (error) {
-    resultsDiv.innerHTML = "<p>There was a problem loading the news.</p>";
-  }
+      return response.json();
+    })
 
-  loadingBox.classList.add("hidden");
+    .then(function (data) {
+
+      if (!data.articles || !data.articles.results || data.articles.results.length === 0) {
+        resultsDiv.innerHTML += "<p>No news found for this category.</p>";
+      } 
+
+      else {
+        let articleList = "";
+
+        //display stuff
+        for (let i = 0; i < data.articles.results.length; i++) {
+          let a = data.articles.results[i];
+          articleList += "<p><strong>" + a.title + "</strong></p>";
+          if (a.body) {
+            articleList += "<p>" + a.body.substring(0, 150) + "...</p>";
+          } else {
+            articleList += "<p>No description.</p>";
+          }
+          articleList += '<p><a href="' + a.url + '" target="_blank">Read more</a></p><hr>';
+        }
+
+        resultsDiv.innerHTML += articleList;
+        
+      }
+
+      loadingBox.classList.add("hidden");
+    })
+
+    .catch(function (error) {
+      console.log("Error:", error);
+      resultsDiv.innerHTML = "<p>There was a problem loading the news.</p>";
+      loadingBox.classList.add("hidden");
+    });
 }
