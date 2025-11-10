@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="wa12.css">
+  <script src="wa12.js" defer></script>
+  <title>News by Category</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bentham&family=Gwendolyn:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header>News by Category</header>
+
+    <div class="quotes">
+      <div class="quote-text">
+        Here you can get reliable news in any category of your choosing! Just take a look at the options below!
+      </div>
+
+      <form id="js-form">
+        <label for="js-category">Select A Category:</label>
+        <select id="js-category" class="name-input">
+          <option value="dmoz/Society/Issues/Warfare_and_Conflict">Warfare and Conflict</option>
+          <option value="dmoz/Science/Astronomy">Science / Astronomy</option>
+          <option value="dmoz/Computers/Programming">Computers / Programming</option>
+          <option value="dmoz/Health/Public_Health">Health / Public Health</option>
+          <option value="dmoz/Sports">Sports</option>
+        </select>
+
+        <button type="submit" id="js-fetch" class="get-news button">
+          Get News
+        </button>
+      </form>
+
+      <div id="js-loading" class="loading hidden" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <div id="js-loading-text" class="loading-text">Loading articles…</div>
+      </div>
+
+      <div id="js-results" class="quote-text results-box"></div>
+    </div>
+    
+    <div class="controls">
+      <button id="js-clear" class="reset button">Clear & Reset</button>
+    </div>
+  </div>
+</body>
+</html>
