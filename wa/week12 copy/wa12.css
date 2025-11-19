@@ -1,0 +1,223 @@
+html {
+  box-sizing: border-box;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 180px;
+  height: 100%;
+  background-color: black;
+  padding: 20px;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+*:before {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+*:after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Bentham", serif;
+  background-color: #232323;
+  color: white;
+
+}
+
+#tiktok-title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: "TikTok Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: #ff2a55;
+}
+
+.app {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 600px;
+  background-color: rgb(12, 12, 12);
+  border-radius: 5px;
+  padding-bottom: 30px;
+  color: white;
+
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header {
+  width: 100%;
+  font-size: 40px;
+  font-family: "Gwendolyn", cursive;
+  font-weight: 700;
+  text-align: center;
+  padding: 25px;
+  border-bottom: 1px solid #ebebeb;
+  background-color: #a40000;
+  color: rgb(213, 253, 253);
+  border-radius: 5px 5px 0 0;
+}
+
+.quotes {
+  padding: 30px 40px;
+  min-height: 250px;
+  
+}
+
+.quote-text {
+  padding-bottom: 20px;
+  font-size: 22px;
+  color: rgb(238, 236, 236);
+  text-align: center;
+}
+
+.name-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.results-box {
+  background-color: #1d1d1d;
+
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: left;
+  font-size: 18px;
+  color: #dddddd;
+  line-height: 1.6;
+
+  min-height: 400px;  
+  max-height: 80vh;   
+  overflow-y: auto;
+}
+
+.results-box a {
+  color: #a93232;
+  text-decoration: none;
+}
+
+.results-box a:hover {
+  text-decoration: underline;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  background: #c2e5e8;
+  border: 1px solid #b3d3f1;
+  border-radius: 6px;
+}
+
+.loading-text {
+  font-size: 16px;
+  color: #3c082f;
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid #e6a6cc;
+  border-top-color: #c4536f;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.controls {
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.button {
+  display: block;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.reset {
+  background-color: #171819;
+}
+
+.reset:hover {
+  background-color: #0c0c0c;
+}
+
+.get-news {
+  background-color: #ea2929;
+  margin-bottom: 15px;
+}
+
+.get-news:hover {
+  background-color: #d00000;
+}
+
+.next-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #3a3a3a; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background-color: #2b2b2b;
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    width: 95%;
+  }
+  .quote-text {
+    font-size: 18px;
+  }
+}
