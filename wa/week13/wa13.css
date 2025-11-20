@@ -2,6 +2,17 @@ html {
   box-sizing: border-box;
 }
 
+.sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 180px;
+  height: 100%;
+  background-color: black;
+  padding: 20px;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -20,30 +31,46 @@ html {
   padding: 0px;
 }
 
-
 body {
   font-family: "Bentham", serif;
   background-color: #232323;
+  color: white;
+
+}
+
+#tiktok-title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: "TikTok Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: #ff2a55;
 }
 
 .app {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 20px;
+  margin-left: 20px;
   width: 600px;
-  background-color: white;
+  background-color: rgb(12, 12, 12);
   border-radius: 5px;
   padding-bottom: 30px;
+  color: white;
+
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 header {
   width: 100%;
-  font-size: 60px;
+  font-size: 40px;
   font-family: "Gwendolyn", cursive;
   font-weight: 700;
   text-align: center;
-  padding: 50px;
+  padding: 25px;
   border-bottom: 1px solid #ebebeb;
   background-color: #a40000;
   color: rgb(213, 253, 253);
@@ -51,14 +78,15 @@ header {
 }
 
 .quotes {
-  padding: 40px 50px;
+  padding: 30px 40px;
   min-height: 250px;
+  
 }
 
 .quote-text {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   font-size: 22px;
-  color: black;
+  color: rgb(238, 236, 236);
   text-align: center;
 }
 
@@ -73,14 +101,19 @@ header {
 }
 
 .results-box {
-  background-color: #d9e7fa;
+  background-color: #1d1d1d;
+
   border-radius: 6px;
   padding: 15px;
   margin-top: 15px;
   text-align: left;
   font-size: 18px;
-  color: #333;
+  color: #dddddd;
   line-height: 1.6;
+
+  min-height: 400px;  
+  max-height: 80vh;   
+  overflow-y: auto;
 }
 
 .results-box a {
@@ -152,16 +185,32 @@ header {
 }
 
 .reset:hover {
-  background-color: #3e4244;
+  background-color: #0c0c0c;
 }
 
 .get-news {
-  background-color: #0047b1;
+  background-color: #ea2929;
   margin-bottom: 15px;
 }
 
 .get-news:hover {
-  background-color: #007dd0;
+  background-color: #d00000;
+}
+
+.next-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #3a3a3a; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background-color: #2b2b2b;
 }
 
 @media screen and (max-width: 600px) {
